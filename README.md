@@ -3,7 +3,9 @@ Parameters are:
 --SpliceAI_input_csv 
 
   contains headers gene_name,CM_type,input_vcf_file
+  
   e.g gene_name,CM_type,input_vcf_file
+  
       CEP85L,DCM,s3://lifebit-user-data-.../path/to/file/input.vcf
 
 
