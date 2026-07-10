@@ -13,7 +13,6 @@ process run_SpliceAI {
     publishDir "${gene_name}", mode: 'copy'
 
     container 'quay.io/biocontainers/spliceai'
-    container 'tensorflow/tensorflow:latest'
 
     input:
     tuple val(gene_name),
@@ -48,5 +47,5 @@ workflow {
     ref_genome = Channel.value(file(params.ref_genome))
     annotation_file = Channel.value(file(params.annotation_file))
 
-    run_SpliceAI(SpliceAI_input_csv, ref_genome,annotation_file)
+    run_SpliceAI(input_ch, ref_genome,annotation_file)
 }
